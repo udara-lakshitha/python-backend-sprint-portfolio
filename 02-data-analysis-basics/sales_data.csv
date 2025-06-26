@@ -1,0 +1,9 @@
+OrderID,Product,Category,Price,Quantity,OrderDate
+1,Laptop,Electronics,1200,1,2023-01-15
+2,Mouse,Electronics,25,2,2023-01-17
+3,Book,Books,15,3,2023-01-18
+4,Laptop,Electronics,1200,1,2023-01-20
+5,Keyboard,Electronics,75,1,2023-01-21
+6,Book,Books,15,2,2023-01-21
+7,Monitor,Electronics,300,1,2023-01-22
+8,Book,Books,20,1,2023-01-25
