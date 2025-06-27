@@ -94,13 +94,13 @@ This section covers problems solved using the Two Pointers pattern, a technique 
 - **Core Logic:**
     ```python
     left = 0
-        right = left + 1
-        min_price = float("inf")
-        max_profit = 0
-        for price in prices:
-            if price < min_price:
-                min_price = price
-            else:
-                max_profit = max(max_profit, price - min_price)
-        return max_profit
+    right = left + 1
+    min_price = float("inf")
+    max_profit = 0
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        else:
+            max_profit = max(max_profit, price - min_price)
+    return max_profit
     ```
