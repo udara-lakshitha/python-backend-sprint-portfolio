@@ -1,0 +1,14 @@
+# railway.toml
+
+# This is the build configuration for Nixpacks on Railway
+[build]
+# This command tells the builder to use the Dockerfile found at the specified path.
+# It will automatically build and deploy from there.
+dockerfilePath = "./03-fastapi-basics/Dockerfile"
+
+# This is the deploy configuration
+[deploy]
+# This command is what Railway will run to start your application.
+# We don't need to specify it here because our Dockerfile's CMD instruction
+# already handles it perfectly. Railway will respect the CMD from the Dockerfile.
+# startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT" # This is just for your info
