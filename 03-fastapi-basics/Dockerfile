@@ -8,13 +8,13 @@ WORKDIR /app
 
 # Copy the file that lists our Python dependencies into the container
 # We need to create this file next!
-COPY requirements.txt .
+COPY 03-fastapi-basics/requirements.txt .
 
 # Install the dependencies listed in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy our application code (the current directory '.') into the container's /app directory
-COPY . .
+# Specify that you only want to copy the contents of the fastapi folder
+COPY 03-fastapi-basics/ .
 
 # Expose port 8000. This tells Docker that the container will listen on this port.
 EXPOSE 8000
