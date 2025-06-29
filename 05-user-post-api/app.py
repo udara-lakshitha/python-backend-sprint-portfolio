@@ -62,3 +62,12 @@ def create_post(post: PostCreate, session: Session = Depends(get_session)):
     session.refresh(post_to_db)
 
     return post_to_db
+
+# --- Read posts endpoint ---
+@app.get('/posts/', response_model=List[PostReadWithUser])
+def read_posts(session: Session = Depends(get_session)):
+    # Create a statement to select all posts
+    statement = select(Post)
+    # Execute the statement
+    posts = session.exec(statement).all()
+    return posts
