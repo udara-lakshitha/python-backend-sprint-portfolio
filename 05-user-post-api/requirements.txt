@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+psycopg2-binary # The driver to talk to PostgreSQL
+sqlmodel # The modern Python library for interacting with SQL databases
