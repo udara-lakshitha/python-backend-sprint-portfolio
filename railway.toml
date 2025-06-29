@@ -1,12 +1,6 @@
-# railway.toml (Final Version)
+# railway.toml (Simple & Correct)
 
 [build]
-builder = "nixpacks" # Use the standard builder
-# Tell the builder where the application root is within the repo
-nixpacksConfigPath = "./05-user-post-api/nixpacks.toml" 
-
-[deploy]
-# This is the command Railway will run AFTER the database is ready
-startCommand = "uvicorn app:app --host 0.0.0.0 --port {{.PORT}}"
-restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 10
+# This single line tells Railway: "To build this project,
+# find and use the Dockerfile located at this path."
+dockerfilePath = "./05-user-post-api/Dockerfile"
