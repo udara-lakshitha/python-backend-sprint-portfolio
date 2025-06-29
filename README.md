@@ -18,7 +18,7 @@ Welcome to my portfolio, built during an intensive 15-day sprint to forge a job-
 
 A functional To-Do List API built with FastAPI and deployed to the cloud using Docker. This project demonstrates core backend principles, including routing, data modeling with Pydantic, and the full development-to-deployment lifecycle.
 
-- **Live API Documentation:** [https://your-fastapi-app-url.up.railway.app/docs](https://your-fastapi-app-url.up.railway.app/docs)
+- **Live API Documentation:** [https://udara-fastapi-todo.up.railway.app/docs](https://udara-fastapi-todo.up.railway.app/docs)
 - **Location:** `/03-fastapi-basics/`
 - **Key Skills:** FastAPI, Pydantic, Uvicorn, Docker, Cloud Deployment.
 
