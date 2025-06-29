@@ -9,11 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code
 COPY ./05-user-post-api/ .
 
-# Grant execute permissions to our entrypoint script
-RUN chmod +x /app/entrypoint.sh
-
-# Set the entrypoint to our script
-ENTRYPOINT ["/app/entrypoint.sh"]
-
-# The default command that gets passed to the entrypoint
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# This is the new, single startup command.
+# It runs the waiter script, and IF it succeeds (exits 0),
+# THEN it runs the uvicorn server.
+# This is the most reliable way to chain commands.
+CMD python wait_for_db.py && uvicorn app:app --host 0.0.0.0 --port 8000
