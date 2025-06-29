@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# This entrypoint script first runs our Python database waiter,
-# and only then executes the main container command.
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
-# Run the waiter script
+# Run the database waiter script.
+# The 'set -e' above means if wait_for_db.py exits with an error (non-zero),
+# this entire script will stop.
 python wait_for_db.py
 
-# Execute the main command (e.g., uvicorn) passed to this script
+# If the waiter script succeeded, execute the main command passed to this entrypoint.
+# This will be 'uvicorn app:app ...'
 exec "$@"

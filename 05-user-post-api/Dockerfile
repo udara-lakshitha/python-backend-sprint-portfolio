@@ -1,22 +1,19 @@
 FROM python:3.13-slim
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
 WORKDIR /app
 
-# We only need Python dependencies now
-COPY 05-user-post-api/requirements.txt .
+# Copy requirements first for build caching
+COPY ./05-user-post-api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
-COPY 05-user-post-api/ .
+# Copy the rest of the application code
+COPY ./05-user-post-api/ .
 
-# Add execute permissions to the entrypoint script
+# Grant execute permissions to our entrypoint script
 RUN chmod +x /app/entrypoint.sh
 
-# Set the entrypoint
+# Set the entrypoint to our script
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-# The command that the entrypoint will execute
+# The default command that gets passed to the entrypoint
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
