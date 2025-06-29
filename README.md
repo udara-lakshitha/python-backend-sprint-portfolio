@@ -1,52 +1,62 @@
-# 15-Day Backend Developer Sprint Portfolio
+# Professional Backend Developer Portfolio
 
-Welcome to my portfolio, built during an intensive 15-day sprint to forge a job-ready backend developer skillset. This repository showcases my ability to rapidly learn, build, and deploy robust applications using modern Python technologies.
+Welcome to my portfolio, built during an intensive, accelerated sprint. This repository is a demonstration of my ability to architect, build, and containerize a modern, database-driven web application from the ground up.
 
-## Core Competencies Demonstrated:
-- **Backend Development:** Python, FastAPI
-- **Data Manipulation:** Pandas, NumPy
-- **Database Management:** SQL, PostgreSQL, SQLModel (upcoming)
-- **Containerization & Deployment:** Docker, Railway/Cloud
-- **Problem Solving:** Data Structures & Algorithms (DSA)
-- **Version Control:** Git, GitHub
+## 🌟 Lighthouse Project: User & Post Management API
 
----
+This is a complete, production-ready REST API built with FastAPI and backed by a PostgreSQL database. It showcases a full understanding of the modern backend development lifecycle, from database schema design to a containerized, multi-service architecture.
 
-## Projects
+**➡️ Click here to view the project's detailed README, code, and architecture.**](./05-user-post-api/)
 
-### 🚀 Project 03: Deployed To-Do List API (FastAPI)
+### Key Features & Skills Demonstrated:
 
-A functional To-Do List API built with FastAPI and deployed to the cloud using Docker. This project demonstrates core backend principles, including routing, data modeling with Pydantic, and the full development-to-deployment lifecycle.
+- **Robust API Design:** Built with **FastAPI** and **Pydantic** for clear data validation and automatic, interactive documentation.
+- **Database Architecture:** Designed a relational schema with **PostgreSQL** and managed it with **SQLModel**, implementing foreign key relationships for data integrity.
+- **Containerization:** The entire application stack (API + Database) is fully containerized using **Docker** and orchestrated for local development with **Docker Compose**.
+- **Resilient Startup:** Implemented a **Python-based database waiter script** and a shell **entrypoint** to handle container race conditions, ensuring the API only starts after the database is ready.
+- **Professional Workflow:** Managed with **Git** for version control, with clear, conventional commit messages.
 
-- **Live API Documentation:** [https://udara-fastapi-todo.up.railway.app/docs](https://udara-fastapi-todo.up.railway.app/docs)
-- **Location:** `/03-fastapi-basics/`
-- **Key Skills:** FastAPI, Pydantic, Uvicorn, Docker, Cloud Deployment.
+### Local Setup & Launch
 
----
+This project is designed to be run locally with one simple command, demonstrating a professional development setup. **Docker Desktop is required.**
 
-### 🧠 Project 04: Data Structures & Algorithms Essentials
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/python-backend-sprint-portfolio.git
+    cd python-backend-sprint-portfolio
+    ```
 
-A collection of classic DSA problems solved in Python. This section proves foundational computer science knowledge and preparation for technical interviews. Each topic has a log file detailing the problems solved, the patterns used, and the complexity analysis.
+2.  **Navigate to the project directory:**
+    ```bash
+    cd 05-user-post-api
+    ```
 
-- **Location:** `/04-dsa-essentials/`
-- **Topics Covered:**
-    - **Arrays & Hashing:** Solved problems like *Contains Duplicate*, *Valid Anagram*, and *Two Sum*, focusing on O(n) solutions with hash maps and sets.
-    - **Two Pointers:** Solved problems like *Valid Palindrome* and *Best Time to Buy and Sell Stock*, focusing on O(1) space complexity solutions.
+3.  **Launch the application stack:**
+    This single command builds the API image, starts the database, waits for the database to be healthy, and then starts the API.
+    ```bash
+    docker-compose up --build
+    ```
 
----
-
-### 📊 Project 02: Sales Data Analysis (Pandas)
-
-A script that loads, cleans, and analyzes a sample sales dataset to answer key business questions. This project demonstrates proficiency in data manipulation and analysis using the Pandas library.
-
-- **Location:** `/02-data-analysis-basics/`
-- **Key Skills:** Pandas DataFrames, file I/O (`.read_csv`), data filtering, aggregation (`.sum()`), and vectorized operations.
+4.  **Access the local API:**
+    The API will be available at `http://localhost:8000`, with interactive documentation at `http://localhost:8000/docs`.
 
 ---
 
-### 🛠️ Project 01: Password Generator CLI (Python Fundamentals)
+## 🧠 Foundational Skills & Drills
 
-A practical command-line tool that generates secure, customizable passwords. This initial project solidifies core Python concepts in a functional application.
+This portfolio also includes the foundational work completed during the sprint, proving core competencies.
 
-- **Location:** `/01-password-generator-cli/`
-- **Key Skills:** Python functions, data structures (lists, strings), control flow (`if/else`), user input, and the `random` module.
+- **[Data Structures & Algorithms](./04-dsa-essentials/):** A log of solved classic DSA problems (Two Sum, Valid Anagram, etc.), demonstrating readiness for technical interviews.
+- **[Data Analysis with Pandas](./02-data-analysis-basics/):** A script showcasing data manipulation and analysis skills.
+- **[Python Fundamentals CLI](./01-password-generator-cli/):** A command-line tool built to solidify core Python concepts.
+
+---
+
+## Core Competencies
+
+- **Languages:** Python
+- **Frameworks:** FastAPI
+- **Databases:** PostgreSQL, SQL
+- **DevOps & Containerization:** Docker, Docker Compose
+- **Libraries:** Pandas, NumPy, SQLModel, Pydantic
+- **CS Fundamentals:** Data Structures, Algorithms, OOP Principles
