@@ -1,21 +1,22 @@
-# This is the full, correct Dockerfile for your current structure.
 FROM python:3.13-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-# The build context is the '05-user-post-api' folder, so the path is simple.
+# We only need Python dependencies now
 COPY 05-user-post-api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy everything from the build context (the '05-user-post-api' folder)
-# into the container's /app directory.
-COPY 05-user-post-api/ /app
+# Copy the application code
+COPY 05-user-post-api/ .
 
-# Execute permissions to the entrypoint script.
+# Add execute permissions to the entrypoint script
 RUN chmod +x /app/entrypoint.sh
 
-# The entrypoint script path is now relative to the WORKDIR /app
+# Set the entrypoint
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-# The command to run the application.
+# The command that the entrypoint will execute
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
