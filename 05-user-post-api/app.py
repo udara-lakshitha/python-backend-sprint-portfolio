@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, HTTPException
 from database import create_db_and_tables
-from models import User, PostRead, PostCreate, Post, UserReadWithPosts, PostReadWithUser
+from models import User, PostCreate, Post, UserReadWithPosts, PostReadWithUser
 from database import get_session
 from typing import List
 from sqlmodel import select, Session
