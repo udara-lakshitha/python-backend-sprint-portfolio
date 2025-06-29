@@ -11,6 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # into the container's /app directory.
 COPY 05-user-post-api/ /app
 
+# Execute permissions to the entrypoint script.
+RUN chmod +x /app/entrypoint.sh
+
 # The entrypoint script path is now relative to the WORKDIR /app
 ENTRYPOINT ["/app/entrypoint.sh"]
 
